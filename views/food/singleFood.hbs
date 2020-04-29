@@ -1,16 +1,19 @@
-{{singleFood.name}}
-
 <a href="/food/{{singleFood._id}}/edit">
     <button>
         Edit
     </button>
 </a>
+<div class="item">
+    <div class="label">Name</div>
+    <div class="data name">{{singleFood.name}}</div>>
+</div>
 
-<div class="title">Name</div>
-{{singleFood.name}}
+<div class="item">
+    <div class="label">Carbohydrates</div>
+    <div class="data">{{singleFood.carbValue}}</div>
+</div>
 
-<div class="title">Carbohydrates</div>
-{{singleFood.carbValue}}
-
-<div class="title">Is Beverage</div>
-{{singleFood.isBeverage}}
+<div class="item">
+    <div class="label">Is Beverage</div>
+    <div class="data">{{singleFood.isBeverage}}</div>
+</div>

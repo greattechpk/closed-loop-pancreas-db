@@ -9,11 +9,17 @@
 {{#each allFood}}
 <a href="/food/{{_id}}">
     <div class="food-item">
-        {{name}}
-        <div class="title">Carbohydrates</div>
-        {{carbValue}}g
-        <div class="title">Is Beverage?</div>
-        {{isBeverage}}
+        <div class="item">
+            <div class="data name">{{name}}</div>
+        </div>
+        <div class="item">
+            <div class="label">Carbohydrates</div>
+            <div class="data">{{carbValue}}g</div>
+        </div>
+        <div class="item">
+            <div class="label">Is Beverage?</div>
+            <div class="data">{{isBeverage}}</div>
+        </div>
     </div>
 </a>
 <hr>
