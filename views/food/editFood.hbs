@@ -1,0 +1,17 @@
+<h1>Edit Food</h1>
+
+<form action="/food/{{singleFood._id}}?_method=PUT" method="POST">
+    <label>Name</label>
+    <input type="text" name="name" value="{{singleFood.name}}" required/>
+
+    <label>Carbohydrates</label>
+    <input type="number" name="carbValue" value="{{singleFood.carbValue}}" required/>
+
+    <label>Is a beverage?</label>
+    <select name="isBeverage">
+        <option value="true">True</option>
+        <option value="false">False</option>
+    </select>
+
+    <input type="submit" value="Save" />
+</form>

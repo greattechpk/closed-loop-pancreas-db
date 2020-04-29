@@ -1,0 +1,20 @@
+<h1>All Food Items</h1>
+
+<a href="/food/new">
+    <button>
+        Create Food
+    </button>
+</a>
+
+{{#each allFood}}
+<a href="/food/{{_id}}">
+    <div class="food-item">
+        {{name}}
+        <div class="title">Carbohydrates</div>
+        {{carbValue}}g
+        <div class="title">Is Beverage?</div>
+        {{isBeverage}}
+    </div>
+</a>
+<hr>
+{{/each}}
