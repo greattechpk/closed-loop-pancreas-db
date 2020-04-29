@@ -1,4 +1,4 @@
-<h1>All Food Items</h1>
+<h1>Food Item DB</h1>
 
 <a href="/food/new">
     <button>
@@ -7,20 +7,19 @@
 </a>
 
 {{#each allFood}}
-<a href="/food/{{_id}}">
-    <div class="food-item">
-        <div class="item">
-            <div class="data name">{{name}}</div>
-        </div>
-        <div class="item">
-            <div class="label">Carbohydrates</div>
-            <div class="data">{{carbValue}}g</div>
-        </div>
-        <div class="item">
-            <div class="label">Is Beverage?</div>
-            <div class="data">{{isBeverage}}</div>
-        </div>
+
+<div class="food-item">
+    <div class="item">
+        <div class="data name">{{name}}</div>
     </div>
-</a>
-<hr>
+    <div class="item">
+        <div class="label">Carbohydrates</div>
+        <div class="data">{{carbValue}}g</div>
+    </div>
+    <div class="item">
+        <div class="label">Is Beverage?</div>
+        <div class="data">{{isBeverage}}</div>
+    </div>
+</div>
+<a href="/food/{{_id}}"><button>View</button></a>
 {{/each}}
