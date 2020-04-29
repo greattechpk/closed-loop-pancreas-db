@@ -1,6 +1,5 @@
 const express = require('express')
 const globalModel = require('../models/global.js')
-
 const globalRouter = express.Router()
 
 // GET ALL Route
@@ -32,17 +31,6 @@ globalRouter.get('/:id/edit', (req, res) => {
         })
 })
 
-// GET ONE
-globalRouter.get('/:id', async (req, res) => {
-    console.log('globalRouter.GET one route')
-    try {
-        const singleGlobal = await globalModel.getOneGlobal(req.params.id)
-        res.render('global/singleGlobal', {singleGlobal})
-    } catch (err) {
-        console.log(err)
-        res.json(err)
-    }
-})
 
 // CREATE
 globalRouter.post('/', (req, res) => {
@@ -68,18 +56,6 @@ globalRouter.put('/:id', (req, res) => {
         })
 })
 
-
-// DELETE
-globalRouter.delete('/:id', (req, res) =>{
-    globalModel.deleteGlobal(req.params.id)
-        .then(() => {
-            res.redirect('/global')
-        })
-        .catch(err => {
-            console.log(err)
-            res.json(err)
-        })
-})
 
 
 module.exports = globalRouter
