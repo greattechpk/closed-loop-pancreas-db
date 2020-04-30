@@ -14,6 +14,7 @@ globalRouter.get('/', (req, res) => {
         })
 })
 
+
 // CREATE NEW GLOBAL FORM
 globalRouter.get('/new', (req, res) => {
     res.render('global/createSettings')
@@ -59,7 +60,7 @@ globalRouter.post('/', (req, res) => {
 globalRouter.put('/:id', (req, res) => {
     globalModel.updateGlobal(req.params.id, req.body)
         .then(() => {
-            res.redirect(`/settings/${req.params.id}`)
+            res.redirect(`/settings`)
         })
         .catch(err => {
             console.log(err)
