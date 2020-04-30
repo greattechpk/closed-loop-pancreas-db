@@ -59,7 +59,7 @@ globalRouter.post('/', (req, res) => {
 globalRouter.put('/:id', (req, res) => {
     globalModel.updateGlobal(req.params.id, req.body)
         .then(() => {
-            res.redirect(`/global/${req.params.id}`)
+            res.redirect(`/settings/${req.params.id}`)
         })
         .catch(err => {
             console.log(err)
