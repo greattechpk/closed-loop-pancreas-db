@@ -3,6 +3,7 @@ const methodOverride = require('method-override')
 
 //add controllers
 const foodRouter = require('./controller/food.js')
+const globalRouter = require('./controller/global.js')
 //const reviewRouter = require('./controller/review.js')
 
 const app = express()
@@ -21,6 +22,7 @@ app.get('/', (req, res) => {
 
 //choose views
 app.use('/food', foodRouter)
+app.use('/settings', globalRouter)
 //app.use('/review', reviewRouter)
 
 app.listen(port, () => {

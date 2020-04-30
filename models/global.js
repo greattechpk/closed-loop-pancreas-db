@@ -3,10 +3,12 @@ const Schema = mongoose.Schema
 
 const globalSchema = new Schema({
     carbRatio: Number,
+    correctionSubtract:Number,
+    correctionDivisor:Number,
     activeInsulin: Number,
     activeInsulinTimer: Number,
     insulinType: String,
-    insulinTypeActivityLength: Number
+    insulinActivityLength: Number
 })
 
 const globalCollection = mongoose.model('global', globalSchema)
