@@ -1,0 +1,24 @@
+<div class="settings-item">
+    <div class="item">
+        <div class="label">Carb Ratio</div>
+        <div class="data">{{singleGlobal.carbRatio}}</div>
+    </div>
+    <div class="item">
+        <div class="label">Correction</div>
+        <div class="data">(BG - {{singleGlobal.correctionSubtract}}) / {{singleGlobal.correctionDivisor}}</div>
+    </div>
+    <div class="group">
+    <div class="item">
+        <div class="label">Insulin Type</div>
+        <div class="data">{{singleGlobal.insulinType}}</div>
+    </div>
+    <div class="item">
+        <div class="label">Insulin Activity Length</div>
+        <div class="data">{{singleGlobal.insulinActivityLength}}</div>
+    </div>
+    </div>
+</div>
+
+<form action="/settings/{{singleGlobal._id}}?_method=DELETE" method="POST">
+    <input type="submit" value="Delete">
+</form>

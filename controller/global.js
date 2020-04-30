@@ -23,7 +23,7 @@ globalRouter.get('/new', (req, res) => {
 globalRouter.get('/:id', (req, res) => {
     globalModel.getOneGlobal(req.params.id)
         .then((singleGlobal) => {
-            res.render('global/singleGlobal', {singleGlobal})
+            res.render('global/singleSetting', {singleGlobal})
         })
         .catch(err => {
             console.log(err)
@@ -35,7 +35,7 @@ globalRouter.get('/:id', (req, res) => {
 globalRouter.get('/:id/edit', (req, res) => {
      globalModel.getOneGlobal(req.params.id)
         .then((singleGlobal) => {
-            res.render('global/editGlobal', {singleGlobal})
+            res.render('global/editSetting', {singleGlobal})
         })
         .catch(err => {
             console.log(err)
