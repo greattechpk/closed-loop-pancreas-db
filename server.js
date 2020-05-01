@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
 //choose views
 app.use('/food', foodRouter)
 app.use('/settings', globalRouter)
+app.use('/', insulinRouter)
 //app.use('/review', reviewRouter)
 
 app.listen(port, () => {
