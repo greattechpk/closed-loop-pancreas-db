@@ -1,0 +1,39 @@
+<div class="single insulin-item">
+    <div class="item">
+        <div class="label">Blood Glucose</div>
+        <div class="data">{{singleInsulin.bloodGlucose}}</div>
+    </div>
+    <div class="item">
+        <div class="label">Correction</div>
+        <div class="data">{{singleInsulin.totalCorrection}}(totalCorrection)-ActiveInsulin={{singleInsulin.fixedCorrection}}(Correction Delivered)
+        </div>
+    </div>
+    <div class="group">
+        <div class="item">
+            <div class="label">Food Items</div>
+            <div class="data">{{singleInsulin.foodItems}}</div>
+        </div>
+        <div class="item">
+            <div class="label">Total Carbs</div>
+            <div class="data">{{singleInsulin.totalCarbs}}</div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="label">Delivery Type</div>
+        <div class="data">{{singleInsulin.deliveryType}}</div>
+    </div>
+    <div class="item">
+        <div class="label">Total Delivery</div>
+        <div class="data">{{singleInsulin.totalDelivery}}</div>
+    </div>
+    <div class="item">
+        <div class="label">Delivery Time</div>
+        <div class="data">{{singleInsulin.deliveryTime}}</div>
+    </div>
+</div>
+
+<a href="/insulin/{{_id}}/edit">
+    <button>
+        Edit
+    </button>
+</a>

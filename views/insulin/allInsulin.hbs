@@ -1,0 +1,43 @@
+<h1>Settings</h1>
+
+{{#each allInsulin}}
+
+<div class="insulin-item">
+    <div class="item">
+        <div class="label">Blood Glucose</div>
+        <div class="data">{{bloodGlucose}}</div>
+    </div>
+    <div class="item">
+        <div class="label">Correction</div>
+        <div class="data">{{totalCorrection}}(totalCorrection)-ActiveInsulin={{fixedCorrection}}(Correction Delivered)
+        </div>
+    </div>
+    <div class="group">
+        <div class="item">
+            <div class="label">Food Items</div>
+            <div class="data">{{foodItems}}</div>
+        </div>
+        <div class="item">
+            <div class="label">Total Carbs</div>
+            <div class="data">{{totalCarbs}}</div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="label">Delivery Type</div>
+        <div class="data">{{deliveryType}}</div>
+    </div>
+    <div class="item">
+        <div class="label">Total Delivery</div>
+        <div class="data">{{totalDelivery}}</div>
+    </div>
+    <div class="item">
+        <div class="label">Delivery Time</div>
+        <div class="data">{{deliveryTime}}</div>
+    </div>
+</div>
+<a href="/insulin/{{_id}}/edit">
+    <button>
+        Edit
+    </button>
+</a>
+    {{/each}}

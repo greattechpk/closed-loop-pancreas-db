@@ -2,13 +2,15 @@ const mongoose = require('../db/connection.js')
 const Schema = mongoose.Schema
 
 const insulinSchema = new Schema({
-    carbRatio: Number,
-    correctionSubtract:Number,
-    correctionDivisor:Number,
-    activeInsulin: Number,
-    activeInsulinTimer: Number,
-    insulinType: String,
-    insulinActivityLength: Number
+    bloodGlucose: Number,
+    totalCorrection:Number,
+    fixedCorrection: Number,
+    foodItems: Array,
+    totalCarbs: Number,
+    totalFoodDelivery: Number,
+    deliveryType: String,
+    totalDelivery: Number,
+    deliveryTime: Date
 })
 
 const insulinCollection = mongoose.model('insulin', insulinSchema)
