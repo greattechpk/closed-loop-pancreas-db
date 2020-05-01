@@ -4,6 +4,7 @@ const methodOverride = require('method-override')
 //add controllers
 const foodRouter = require('./controller/food.js')
 const globalRouter = require('./controller/global.js')
+const insulinRouter = require('./controller/insulin.js')
 //const reviewRouter = require('./controller/review.js')
 
 const app = express()
