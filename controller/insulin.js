@@ -1,5 +1,7 @@
 const express = require('express')
 const insulinModel = require('../models/insulin.js')
+const foodModel = require('../models/food.js')
+
 const insulinRouter = express.Router()
 
 // GET ALL Route
@@ -16,8 +18,14 @@ insulinRouter.get('/', (req, res) => {
 
 
 // CREATE NEW INSULIN FORM
-insulinRouter.get('/new', (req, res) => {
-    res.render('insulin/createInsulin')
+insulinRouter.get('/new', async (req, res) => {
+    try{
+        const foodData = await foodModel.getAllFood()
+        res.render('insulin/createInsulin', {foodData})
+    }catch{
+
+    }
+    
 })
 
 // GET ONE

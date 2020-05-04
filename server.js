@@ -17,15 +17,11 @@ app.use(express.urlencoded())
 app.use(express.json())
 app.use(express.static(__dirname + '/public'))
 
-app.get('/', (req, res) => {
-    res.json('ok')
-})
 
 //choose views
 app.use('/food', foodRouter)
 app.use('/settings', globalRouter)
 app.use('/', insulinRouter)
-//app.use('/review', reviewRouter)
 
 app.listen(port, () => {
     console.log(`Server started on port ${port}`)
