@@ -1,6 +1,6 @@
-<h1>Create Settings</h1>
+<h1>Deliver Insulin</h1>
 
-    {{!-- bloodGlucose: Number,
+{{!-- bloodGlucose: Number,
     totalCorrection:Number,
     fixedCorrection: Number,
     foodItems: Array,
@@ -10,7 +10,7 @@
     totalDelivery: Number,
     deliveryTime: Date --}}
 
-    {{!-- const globalSchema = new Schema({
+{{!-- const globalSchema = new Schema({
     carbRatio: Number,
     correctionSubtract:Number,
     correctionDivisor:Number,
@@ -25,29 +25,40 @@
     <diV class="form-group">
         <label>Enter BG</label>
         <span><input type="number" name="bloodGlucose" /></span>
-        <p>Total Correction = (BG - {{globalData.correctionSubtract}})/{{globalData.correctionDivisor}} - {{globalData.activeInsulin}}(Active Insulin)</p>
+        <div class="form-section">
+            <label>Correction Formula</label>
+            <p>Fixed Correction = (BG - {{globalData.correctionSubtract}})/{{globalData.correctionDivisor}} - {{globalData.activeInsulin}}(Active Insulin)</p>
+            <div class="form-block"><label>Total Correction:</label><input type="number" name="totalCorrection" class="input-tcorrect" readonly></div>
+            <div class="form-block"><label>Fixed Correction:</label><input type="number" name="fixedCorrection" class="input-fcorrect" readonly></div>
+        </div>
     </diV>
+
     <div class="form-group">
         <label>Food Items</label>
         <div id="food-pop">
             {{!-- dropdown values added go here --}}
         </div>
         <div class="food-dd" id="food-dd">
-        <select name="foodItems" id="foodItemsdd">
-            {{#each foodData}}
-            <option>{{name}} <span class="carb-val">{{carbValue}}</span>g</option>
-            {{/each}}
-        </select>
-        <button id="plus-btn">Add</button>
+            <select name="foodItems" id="foodItemsdd">
+                {{#each foodData}}
+                <option>{{name}} <span class="carb-val">{{carbValue}}</span>g</option>
+                {{/each}}
+            </select>
+            <div id="plus-btn">Add</div>
         </div>
+        <div class="form-block"><label>Total Carbs:</label><input type="number" name="totalCarbs" class="input-tcarbs" readonly></div>
+        <div class="form-block"><label>Food Delivery:</label><input type="number" name="totalFoodDelivery" class="input-fd" readonly></div>
     </div>
+
     <div class="form-group">
         <label>Delivery Type</label>
-        <select name="deliveryType" id="deliveryTypedd">
+        <select name="deliveryType" id="deliveryType-dd">
             <option value="food">Food Delivery</option>
             <option value="correction">Correction</option>
             <option value="both">Both</option>
         </select>
     </div>
+
+    <div class="form-block"><label>Total Delivery:</label><input type="number" name="totalDelivery" class="input-td" readonly></div>
     <input type="submit" value="Create" />
 </form>
