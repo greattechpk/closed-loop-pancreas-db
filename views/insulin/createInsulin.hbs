@@ -24,12 +24,12 @@
 <form action="/insulin" method="POST">
     <diV class="form-group">
         <label>Enter BG</label>
-        <span><input type="number" name="bloodGlucose" /></span>
+        <span><input type="number" name="bloodGlucose" id="formBG"/></span>
         <div class="form-section">
             <label>Correction Formula</label>
-            <p>Fixed Correction = (BG - {{globalData.correctionSubtract}})/{{globalData.correctionDivisor}} - {{globalData.activeInsulin}}(Active Insulin)</p>
-            <div class="form-block"><label>Total Correction:</label><input type="number" name="totalCorrection" class="input-tcorrect" readonly></div>
-            <div class="form-block"><label>Fixed Correction:</label><input type="number" name="fixedCorrection" class="input-fcorrect" readonly></div>
+            <p>Fixed Correction = (BG - <span id="valCorrectSub">{{globalData.correctionSubtract}}</span>)/<span id="valCorrectDiv">{{globalData.correctionDivisor}}</span> - <span id="valActive">{{globalData.activeInsulin}}(Active Insulin)</span></p>
+            <div class="form-block"><label>Total Correction:</label><input type="number" name="totalCorrection" id="formTCorrect" readonly></div>
+            <div class="form-block"><label>Fixed Correction:</label><input type="number" name="fixedCorrection" id="formFCorrect" readonly></div>
         </div>
     </diV>
 
@@ -44,7 +44,8 @@
                 <option>{{name}} <span class="carb-val">{{carbValue}}</span>g</option>
                 {{/each}}
             </select>
-            <div id="plus-btn">Add</div>
+            <input id="quantity" type="number"/>
+            <div id="add-btn">Add</div>
         </div>
         <div class="form-block"><label>Total Carbs:</label><input type="number" name="totalCarbs" class="input-tcarbs" readonly></div>
         <div class="form-block"><label>Food Delivery:</label><input type="number" name="totalFoodDelivery" class="input-fd" readonly></div>
