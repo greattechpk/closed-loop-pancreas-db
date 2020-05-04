@@ -1,7 +1,7 @@
 const express = require('express')
 const insulinModel = require('../models/insulin.js')
 const foodModel = require('../models/food.js')
-
+const globalModel = require('../models/global.js')
 const insulinRouter = express.Router()
 
 // GET ALL Route
@@ -21,7 +21,8 @@ insulinRouter.get('/', (req, res) => {
 insulinRouter.get('/new', async (req, res) => {
     try{
         const foodData = await foodModel.getAllFood()
-        res.render('insulin/createInsulin', {foodData})
+        const globalData = await globalModel.getFirstGlobal()
+        res.render('insulin/createInsulin', {foodData,globalData})
     }catch{
 
     }

@@ -23,6 +23,12 @@ function getOneGlobal(id) {
     return globalCollection.findById(id)
 }
 
+// Get 1st
+
+function getFirstGlobal(){
+    return globalCollection.findOne()
+}
+
 // CREATE
 function createGlobal(newGlobal) {
     return globalCollection.create(newGlobal)
@@ -42,6 +48,7 @@ function deleteGlobal(id) {
 module.exports = {
     getOneGlobal,
     getAllGlobal,
+    getFirstGlobal,
     createGlobal,
     updateGlobal,
     deleteGlobal
