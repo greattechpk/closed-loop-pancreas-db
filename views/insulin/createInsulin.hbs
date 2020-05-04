@@ -20,12 +20,12 @@
     insulinActivityLength: Number
     }) --}}
 
-{{globalData.correctionSubtract}}
 
 <form action="/insulin" method="POST">
     <diV class="form-group">
         <label>Enter BG</label>
         <span><input type="number" name="bloodGlucose" /></span>
+        <p>Total Correction = (BG - {{globalData.correctionSubtract}})/{{globalData.correctionDivisor}} - {{globalData.activeInsulin}}(Active Insulin)</p>
     </diV>
     <div class="form-group">
         <label>Food Items</label>
@@ -38,6 +38,7 @@
             <option>{{name}} <span class="carb-val">{{carbValue}}</span>g</option>
             {{/each}}
         </select>
+        <button id="plus-btn">Add</button>
         </div>
     </div>
     <div class="form-group">
