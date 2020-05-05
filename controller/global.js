@@ -14,6 +14,18 @@ globalRouter.get('/', (req, res) => {
         })
 })
 
+// GET ALL Route
+globalRouter.get('/admin', (req, res) => {
+    globalModel.getAllGlobal()
+        .then((allGlobal) => {
+            res.render('global/settingsAdmin', {allGlobal})
+        })
+        .catch(err => {
+            console.log(err)
+            res.json(err)
+        })
+})
+
 
 // CREATE NEW GLOBAL FORM
 globalRouter.get('/new', (req, res) => {
@@ -72,7 +84,7 @@ globalRouter.put('/:id', (req, res) => {
 globalRouter.delete('/:id', (req, res) =>{
     globalModel.deleteGlobal(req.params.id)
         .then(() => {
-            res.redirect('/settings')
+            res.redirect('/settings/admin')
         })
         .catch(err => {
             console.log(err)

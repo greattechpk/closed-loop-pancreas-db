@@ -1,0 +1,33 @@
+<h1>Settings</h1>
+
+{{#each allGlobal}}
+
+<div class="settings-item">
+    <div class="item">
+        <div class="label">Carb Ratio</div>
+        <div class="data">{{carbRatio}}</div>
+    </div>
+    <div class="item">
+        <div class="label">Correction</div>
+        <div class="data">(BG - {{correctionSubtract}}) / {{correctionDivisor}}</div>
+    </div>
+    <div class="group">
+    <div class="item">
+        <div class="label">Insulin Type</div>
+        <div class="data">{{insulinType}}</div>
+    </div>
+    <div class="item">
+        <div class="label">Insulin Activity Length</div>
+        <div class="data">{{insulinActivityLength}}</div>
+    </div>
+    </div>
+</div>
+<a href="/settings/{{_id}}/edit">
+    <button>
+        Edit
+    </button>
+
+<form action="/settings/{{_id}}?_method=DELETE" method="POST">
+    <input type="submit" value="Delete">
+</form>
+{{/each}}

@@ -15,6 +15,17 @@ insulinRouter.get('/', (req, res) => {
             res.json(err)
         })
 })
+// GET ALL Route Admin
+insulinRouter.get('/admin', (req, res) => {
+    insulinModel.getAllInsulin()
+        .then((allInsulin) => {
+            res.render('insulin/allInsulinAdmin', {allInsulin})
+        })
+        .catch(err => {
+            console.log(err)
+            res.json(err)
+        })
+})
 
 
 // CREATE NEW INSULIN FORM
@@ -81,7 +92,7 @@ insulinRouter.put('/:id', (req, res) => {
 insulinRouter.delete('/:id', (req, res) =>{
     insulinModel.deleteInsulin(req.params.id)
         .then(() => {
-            res.redirect('/')
+            res.redirect('/admin')
         })
         .catch(err => {
             console.log(err)

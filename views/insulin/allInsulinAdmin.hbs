@@ -1,39 +1,47 @@
-<div class="single insulin-item">
+<h1>All Deliveries</h1>
+
+{{#each allInsulin}}
+
+<div class="insulin-item">
     <div class="item">
         <div class="label">Blood Glucose</div>
-        <div class="data">{{singleInsulin.bloodGlucose}}</div>
+        <div class="data">{{bloodGlucose}}</div>
     </div>
     <div class="item">
         <div class="label">Correction</div>
-        <div class="data">{{singleInsulin.totalCorrection}}(totalCorrection) - ActiveInsulin = {{singleInsulin.fixedCorrection}}(Correction Delivered)
+        <div class="data">{{totalCorrection}}(totalCorrection)-ActiveInsulin={{fixedCorrection}}(Correction Delivered)
         </div>
     </div>
     <div class="group">
         <div class="item">
             <div class="label">Food Items</div>
-            <div class="data">{{singleInsulin.foodItems}}</div>
+            <div class="data">{{foodItems}}</div>
         </div>
         <div class="item">
             <div class="label">Total Carbs</div>
-            <div class="data">{{singleInsulin.totalCarbs}}</div>
+            <div class="data">{{totalCarbs}}</div>
         </div>
     </div>
     <div class="item">
         <div class="label">Delivery Type</div>
-        <div class="data">{{singleInsulin.deliveryType}}</div>
+        <div class="data">{{deliveryType}}</div>
     </div>
     <div class="item">
         <div class="label">Total Delivery</div>
-        <div class="data">{{singleInsulin.totalDelivery}}</div>
+        <div class="data">{{totalDelivery}}</div>
     </div>
     <div class="item">
         <div class="label">Delivery Time</div>
-        <div class="data">{{singleInsulin.deliveryTime}}</div>
+        <div class="data">{{deliveryTime}}</div>
     </div>
 </div>
-
-<a href="/insulin/{{singleInsulin._id}}/edit">
+<a href="/{{_id}}">
     <button>
-        Edit
+        View
     </button>
 </a>
+
+<form action="/{{_id}}?_method=DELETE" method="POST">
+    <input type="submit" value="Delete">
+</form>
+    {{/each}}
