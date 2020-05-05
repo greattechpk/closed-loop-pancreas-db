@@ -5,25 +5,31 @@
         Create Food
     </button>
 </a>
-<div class="food-container">
-{{#each allFood}}
+<div class="all-items">
+    <div class="food-container">
+        {{#each allFood}}
 
-<div class="food-item">
-    <div class="item">
-        <div class="data name">{{name}}</div>
+        <div class="food-item">
+            <div class="item">
+                <div class="label">Food Item:</div>
+                <div class="data name">{{name}}</div>
+            </div>
+            <div class="item-group">
+                <div class="item">
+                    <div class="label">Carbs</div>
+                    <div class="data">{{carbValue}}g</div>
+                </div>
+                <div class="item">
+                    <div class="label">Drink?</div>
+                    <div class="data capital">{{isBeverage}}</div>
+                </div>
+            </div>
+            <a href="/food/{{_id}}"><button>View</button></a>
+            <form action="/food/{{_id}}?_method=DELETE" method="POST">
+                <input type="submit" value="Delete">
+            </form>
+        </div>
+
+        {{/each}}
     </div>
-    <div class="item">
-        <div class="label">Carbohydrates</div>
-        <div class="data">{{carbValue}}g</div>
-    </div>
-    <div class="item">
-        <div class="label">Is Beverage?</div>
-        <div class="data">{{isBeverage}}</div>
-    </div>
-</div>
-<a href="/food/{{_id}}"><button>View</button></a>
-<form action="/food/{{_id}}?_method=DELETE" method="POST">
-    <input type="submit" value="Delete">
-</form>
-{{/each}}
 </div>

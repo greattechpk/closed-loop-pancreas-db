@@ -141,3 +141,21 @@ button:active {
     width: 90%;
 }
 
+/* food */
+
+.food-btn{
+    position:fixed;
+    right:50px;
+}
+.food-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+}
+/* food item for @media query */
+.food-item{
+    width: 25%;
+}
+.capital{
+    text-transform: capitalize;
+}
