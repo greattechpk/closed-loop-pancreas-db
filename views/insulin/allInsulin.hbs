@@ -1,43 +1,51 @@
-<h1>All Deliveries</h1>
+<h1 class="page-heading">All Deliveries</h1>
 
-{{#each allInsulin}}
+<div class="all-items">
+    {{#each allInsulin}}
+    <div class="single-item-container">
 
-<div class="insulin-item">
-    <div class="item">
-        <div class="label">Blood Glucose</div>
-        <div class="data">{{bloodGlucose}}</div>
-    </div>
-    <div class="item">
-        <div class="label">Correction</div>
-        <div class="data">{{totalCorrection}}(totalCorrection)-ActiveInsulin={{fixedCorrection}}(Correction Delivered)
+        <div class="insulin-item">
+            <div class="item-group">
+                <div class="item">
+                    <div class="label">Blood Glucose</div>
+                    <div class="data">{{bloodGlucose}}</div>
+                </div>
+                <div class="item">
+                    <div class="label">Correction</div>
+                    <div class="data long">{{fixedCorrection}}u</div>
+                </div>
+            </div>
+            <div class="item-group">
+                <div class="item">
+                    <div class="label">Total Carbs</div>
+                    <div class="data">{{totalCarbs}}g</div>
+                </div>
+                <div class="item">
+                    <div class="label">Food Delivery</div>
+                    <div class="data">{{totalFoodDelivery}}u</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="label">Delivery Type</div>
+                <div class="data d-type">{{deliveryType}}</div>
+            </div>
+            <div class="item">
+                <div class="label">Delivery Time</div>
+                <div class="data date">{{deliveryTime}}</div>
+            </div>
+        </div>
+        <div class="container">
+            <a class="viewbtn" href="/{{_id}}">
+                <button>
+                    View
+                </button>
+            </a>
+            <div class="item total-delivery">
+                <div class="label">Total</div>
+                <div class="data totald">{{totalDelivery}}u</div>
+            </div>
         </div>
     </div>
-    <div class="group">
-        <div class="item">
-            <div class="label">Food Items</div>
-            <div class="data">{{foodItems}}</div>
-        </div>
-        <div class="item">
-            <div class="label">Total Carbs</div>
-            <div class="data">{{totalCarbs}}</div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="label">Delivery Type</div>
-        <div class="data">{{deliveryType}}</div>
-    </div>
-    <div class="item">
-        <div class="label">Total Delivery</div>
-        <div class="data">{{totalDelivery}}</div>
-    </div>
-    <div class="item">
-        <div class="label">Delivery Time</div>
-        <div class="data">{{deliveryTime}}</div>
-    </div>
-</div>
-<a href="/{{_id}}">
-    <button>
-        View
-    </button>
-</a>
+
     {{/each}}
+</div>
