@@ -49,10 +49,32 @@ button:active {
     width: 100%;
     margin: 0;
     top:0;
-    padding: 10px;
+    padding: 0 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    min-height: 30px;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+}
+
+.navlink{
+    height:60px;
+    text-decoration: none;
+    color: #D0E7FF;
+    padding:0 20px;
+    background-color: #0C3B5B;
+    display: flex;
+    align-items: center;
+}
+
+.navlink:hover{
+    color: #0C3B5B;
+    padding:0 30px;
+    background-color: #D0E7FF;
 }
 
 .logo{
