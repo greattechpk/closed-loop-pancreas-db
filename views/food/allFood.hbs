@@ -1,11 +1,11 @@
-<h1 class="page-heading">Food Item DB</h1>
+<h1 class="page-heading">Food Item</h1>
 
-<a href="/food/new">
+<a class="food-btn" href="/food/new">
     <button>
         Create Food
     </button>
 </a>
-
+<div class="food-container">
 {{#each allFood}}
 
 <div class="food-item">
@@ -26,3 +26,4 @@
     <input type="submit" value="Delete">
 </form>
 {{/each}}
+</div>
