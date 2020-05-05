@@ -19,6 +19,7 @@ app.use(express.static(__dirname + '/public'))
 
 
 //choose views
+console.log("running")
 app.use('/food', foodRouter)
 app.use('/settings', globalRouter)
 app.use('/', insulinRouter)

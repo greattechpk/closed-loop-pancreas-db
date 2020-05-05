@@ -1,27 +1,6 @@
 <h1>Deliver Insulin</h1>
 
-{{!-- bloodGlucose: Number,
-    totalCorrection:Number,
-    fixedCorrection: Number,
-    foodItems: Array,
-    totalCarbs: Number,
-    totalFoodDelivery: Number,
-    deliveryType: String,
-    totalDelivery: Number,
-    deliveryTime: Date --}}
-
-{{!-- const globalSchema = new Schema({
-    carbRatio: Number,
-    correctionSubtract:Number,
-    correctionDivisor:Number,
-    activeInsulin: Number,
-    activeInsulinTimer: Number,
-    insulinType: String,
-    insulinActivityLength: Number
-    }) --}}
-
-
-<form action="/insulin" method="POST">
+<form action="/" method="POST">
     <diV class="form-group">
         <label>Enter BG</label>
         <span><input type="number" name="bloodGlucose" id="formBG"/></span>
@@ -35,31 +14,36 @@
 
     <div class="form-group">
         <label>Food Items</label>
-        <div id="food-pop">
+        <div id="foodPop">
             {{!-- dropdown values added go here --}}
         </div>
         <div class="food-dd" id="food-dd">
-            <select name="foodItems" id="foodItemsdd">
+            <select name="foodItems" id="foodItemsDD">
                 {{#each foodData}}
-                <option>{{name}} <span class="carb-val">{{carbValue}}</span>g</option>
+                <option value="{{carbValue}}">{{name}} <span class="carb-val">{{carbValue}}</span>g</option>
                 {{/each}}
             </select>
+            <label>Quantity</label>
             <input id="quantity" type="number"/>
-            <div id="add-btn">Add</div>
+            <a id="addBtn" class="btnify" href="#">Add</a>
         </div>
-        <div class="form-block"><label>Total Carbs:</label><input type="number" name="totalCarbs" class="input-tcarbs" readonly></div>
-        <div class="form-block"><label>Food Delivery:</label><input type="number" name="totalFoodDelivery" class="input-fd" readonly></div>
+        <div class="form-block"><label>Total Carbs:</label><input id="totalCarbs" type="number" name="totalCarbs" class="input-tcarbs" readonly></div>
+        <div class="carb-ratio">Food Delivery = Total Carbs / <span id="carbRatio">{{globalData.carbRatio}}</span></div>
+        <div class="form-block"><label>Food Delivery:</label><input id="totalFoodDelivery" type="number" name="totalFoodDelivery" class="input-fd" readonly></div>
     </div>
 
     <div class="form-group">
         <label>Delivery Type</label>
-        <select name="deliveryType" id="deliveryType-dd">
+        <select name="deliveryType" id="deliveryTypeDD">
             <option value="food">Food Delivery</option>
             <option value="correction">Correction</option>
             <option value="both">Both</option>
         </select>
     </div>
 
-    <div class="form-block"><label>Total Delivery:</label><input type="number" name="totalDelivery" class="input-td" readonly></div>
+    <div class="form-block"><label>Total Delivery:</label><input id="totalDelivery" type="number" name="totalDelivery" class="input-td" readonly></div>
     <input type="submit" value="Create" />
 </form>
+
+<script type="text/javascript" src="/js/calc.js"></script>
+<script type="text/javascript" src="/"></script>
