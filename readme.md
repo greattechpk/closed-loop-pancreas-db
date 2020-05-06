@@ -1,4 +1,5 @@
 # closed-loop-pancreas-db
+**General Assembly ATL SEI-27 Project 2**
 This is a database which holds food items with their carb value that can be used in another model to make insulin deliveries.
 The insulin deliveries model takes a blood glucose in and calculates an insulin delivery based on it and the amout of food items added to the form from the food model.
 Parameters are changed via a settings model ie. Carb Ratio and Correction Factor to display and log an insulin delivery.
@@ -21,6 +22,8 @@ Parameters are changed via a settings model ie. Carb Ratio and Correction Factor
 ## Uploaded To Heroku
 
 [closed-loop-pancreas-db - Heroku App](https://closed-loop-pancreas.herokuapp.com/)
+
+---
 [Project Board](https://github.com/greattechpk/closed-loop-pancreas-db/projects/1)
 
 ### ERD Image
