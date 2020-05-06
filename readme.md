@@ -24,3 +24,6 @@ Parameters are changed via a settings model ie. Carb Ratio and Correction Factor
 
 ### ERD Image
 ![erd](ERD.png)
+
+### Wirframe Image
+![wireframe](clpdb-Wireframe.jpg)
