@@ -128,7 +128,7 @@ nav{
     color: rgb(208, 231, 255);
 }
 .label{
-    font-size: 14px;
+    font-size: 16px;
     color: #4a92d4;
 }
 .item{
@@ -182,7 +182,7 @@ nav{
     text-transform: capitalize;
 }
 
-.item-group, .food{
+.food-group{
     padding-bottom: 20px;
     justify-content: center;
 }
