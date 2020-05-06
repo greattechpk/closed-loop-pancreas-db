@@ -21,3 +21,5 @@ Parameters are changed via a settings model ie. Carb Ratio and Correction Factor
 ## Uploaded To Heroku
 
 [closed-loop-pancreas-db - Heroku App](https://closed-loop-pancreas.herokuapp.com/)
+
+![erd](ERD.png)
